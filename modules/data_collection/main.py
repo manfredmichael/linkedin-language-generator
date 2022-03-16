@@ -13,12 +13,21 @@ class LinkedinPostScrapper():
     def login(self):
         login_page = page.LoginPage(self.driver)
         login_page.open()
-        login_page.insert_authentication()
+        login_page.login()
 
     def main(self):
         self.setup()
         self.login()
 
+    def tear_down(self):
+        self.driver.close()
+
 if __name__ == '__main__':
-    LinkedinPostScrapper().main()
+    scrapper = LinkedinPostScrapper()
+    try:
+        scrapper.main()
+    finally:
+        time.sleep(20)
+        scrapper.tear_down()
+
 
