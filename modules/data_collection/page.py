@@ -25,6 +25,12 @@ class LoginPage(BasePage):
         self.password_input = password
         self.password_input.submit()
 
+class SearchPage(BasePage):
+    URL = 'https://www.linkedin.com/search/results/content/?keywords=achievement&sid=w9B'
+
+    def scroll(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
 
 
 
