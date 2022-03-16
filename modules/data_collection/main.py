@@ -13,6 +13,7 @@ class LinkedinPostScrapper():
     def login(self):
         login_page = page.LoginPage(self.driver)
         login_page.open()
+        login_page.insert_authentication()
 
     def main(self):
         self.setup()

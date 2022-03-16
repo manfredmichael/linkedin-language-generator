@@ -1,3 +1,5 @@
+import utils
+
 class BasePage(object):
     """Base class to initialize the base page that will be called from all
     pages"""
@@ -9,3 +11,14 @@ class BasePage(object):
 
 class LoginPage(BasePage):
     URL = 'https://www.linkedin.com/login/in'
+    def login(self):
+        self.insert_authentication()
+
+    def insert_authentication(self):
+        username, password = utils.Authentication().get_authentication()
+        print(username)
+
+
+
+
+
