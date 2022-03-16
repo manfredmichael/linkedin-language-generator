@@ -12,7 +12,6 @@ class LinkedinPostScrapper():
 
     def login(self):
         login_page = page.LoginPage(self.driver)
-        login_page.open()
         login_page.login()
 
     def main(self):

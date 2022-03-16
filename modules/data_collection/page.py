@@ -6,6 +6,7 @@ class BasePage(object):
     pages"""
     def __init__(self, driver):
         self.driver = driver
+        self.open()
 
     def open(self):
         self.driver.get(self.URL)
