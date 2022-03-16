@@ -18,11 +18,18 @@ class BasePageElement(object):
 
         driver = obj.driver
         element = WebDriverWait(driver, 5).until(EC.presence_of_element_located(self.locator))
-        return element.get_attribute("value")
+        return element
+
+    def __str__(self, obj, owner):
+        """Gets the text of the specified object"""
+
+        driver = obj.driver
+        element = WebDriverWait(driver, 5).until(EC.presence_of_element_located(self.locator))
+        return element.text
+
 
 class UsernameInputElement(BasePageElement):
     locator = locators.LoginPageLocators.USERNAME_TEXT_INPUT
 
 class PasswordInputElement(BasePageElement):
     locator = locators.LoginPageLocators.PASSWORD_TEXT_INPUT
-

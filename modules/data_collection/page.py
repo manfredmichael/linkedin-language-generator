@@ -22,7 +22,7 @@ class LoginPage(BasePage):
         username, password = utils.Authentication().get_authentication()
         self.username_input = username
         self.password_input = password
-        print(self.username_input)
+        self.password_input.submit()
 
 
 
