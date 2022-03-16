@@ -1,0 +1,7 @@
+**/__pycache__
+env
+secrets/*
+webdriver/*
+
+!secrets/.gitkeep
+!webdriver/.gitkeep
