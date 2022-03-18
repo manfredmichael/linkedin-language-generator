@@ -14,9 +14,14 @@ class LinkedinPostScrapper():
         login_page = page.LoginPage(self.driver)
         login_page.login()
 
+    def collect_posts(self):
+        search_page = page.SearchPage(self.driver)
+        search_page.show_more_post()
+
     def main(self):
         self.setup()
         self.login()
+        self.collect_posts()
 
     def tear_down(self):
         self.driver.close()
